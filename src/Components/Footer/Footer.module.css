@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+.container span {
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+}

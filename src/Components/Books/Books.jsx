@@ -10,7 +10,7 @@ export function Books({ books }) {
           ISBN = {book.volumeInfo.industryIdentifiers?.[0]}
           img = {book.volumeInfo.imageLinks?.thumbnail}
           name = {book.volumeInfo.title}
-          price= {book.saleInfo.listPrice ? book.saleInfo.listPrice.amount : 'NOT PRICE'}
+          price= {book.saleInfo.listPrice ? `$ ${book.saleInfo.listPrice.amount}` : 'NOT PRICE'}
           author = {book.volumeInfo.authors && book.volumeInfo.authors[0]}
           editorial = {book.volumeInfo.publisher}
       />)

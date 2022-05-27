@@ -1,14 +1,16 @@
 import axios from 'axios';
 
-export const GET_BOOKS = 'GET_BOOKS'
-export const GET_BOOK = 'GET_BOOK'
-
-const APIKEY = process.env.REACT_APP_APIKEY
+export const GET_BOOKS = 'GET_BOOKS';
+export const GET_BOOK = 'GET_BOOK';
+export const ADD_CART = 'ADD_CART';
+export const REMOVE_BOOK = 'REMOVE_BOOK'
+export const REMOVE_ALL = 'REMOVE_ALL'
+export const CLEAR_CART = 'CLEAR_CART'
 
 export const getBooks = (title) => {
     return async dispatch => {
         try {
-            const books = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}&maxResults=40&key=${APIKEY}`);
+            const books = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}&maxResults=40&key=${process.env.REACT_APP_APIKEY}`);
             dispatch({ type: GET_BOOKS, payload: books.data.items})
         } catch (error) {
             console.los(error)
@@ -24,5 +26,23 @@ export const getBook = (id) => {
         } catch (error) {
             console.los(error)
         }
+    }
+}
+
+export const addCart = (book) => {
+    return dispatch => {
+        dispatch({type: ADD_CART, payload: book})
+    }
+}
+
+export const removeBook = (id) => {
+    return dispatch => {
+        dispatch({type: REMOVE_BOOK, payload: id})
+    } 
+}
+
+export const removeAll = () => {
+    return dispatch => {
+        dispatch({type: REMOVE_ALL})
     }
 }

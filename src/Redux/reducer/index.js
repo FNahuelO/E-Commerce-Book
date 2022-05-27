@@ -1,8 +1,9 @@
-import { GET_BOOKS, GET_BOOK } from "../actions"
+import { GET_BOOKS, GET_BOOK, ADD_CART, REMOVE_ALL, CLEAR_CART, REMOVE_BOOK } from "../actions"
 
 const initialState = {
     books: [],
-    book: {}
+    book: {},
+    carrito: [] 
 }
 
 const rootReduce = (state = initialState, action ) => {
@@ -17,7 +18,26 @@ const rootReduce = (state = initialState, action ) => {
                 ...state,
                 book: action.payload
             }
-
+        case ADD_CART:
+            return {
+                ...state,
+                carrito: [...state.carrito, action.payload]
+            }
+        case REMOVE_BOOK:
+            return {
+                ...state,
+                carrito: state.carrito.filter(book => book.id !== action.payload)
+            }
+        case REMOVE_ALL:
+            return {
+                ...state,
+                carrito: []
+            }
+        case CLEAR_CART: 
+            return {
+                ...state,
+                carrito: []
+            }
         default:
             return state
     }

@@ -10,6 +10,12 @@
     position: relative;
 }
 
+#spinner {
+    width: 10rem;
+    position: absolute;
+    left: 50vw;
+}
+
 .container button {
    position: absolute;
    padding: 0.5rem 1rem;

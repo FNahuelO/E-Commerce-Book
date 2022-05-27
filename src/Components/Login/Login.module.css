@@ -1,0 +1,117 @@
+main{
+    background-color: black;
+}
+.container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 50rem;
+    height: 37.5rem;
+    position: relative;
+    margin: auto;
+}
+
+.containerBack {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    backdrop-filter: blur(00.3rem);
+    background-color: rgba(23, 94, 88, 0.9);
+
+}
+
+.containerBack div {
+    margin: 3.25rem 2.5rem;
+    color: white;
+    transition: all 500ms;
+}
+
+.containerBack div p,.containerBack div button {
+    margin-top: 2rem;
+}
+
+.containerBack h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.containerBack button {
+    padding: 0.5rem 2.5rem;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transform: all 300ms;
+    border-radius: 0.5rem;
+}
+
+.containerBack button:hover {
+    background-color: white;
+    color: rgba(23, 94, 88);
+}
+
+.containerFront {
+    width: 100%;
+    max-width: 23.75rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -11rem;
+    left: 0.65rem;
+}
+
+.containerFront form{
+    width: 100%;
+    padding: 3rem 1rem;
+    background-color: white;
+    position: absolute;
+    border-radius: 1.25rem;
+}
+
+.containerFront form h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: rgba(23, 94, 88);
+}
+.containerFront form input{
+    width: 90%;
+    margin-top: 1.25rem;
+    padding: 0.65rem;
+    border: none;
+    background-color: #f2f2f2;
+}
+.containerFront form button{
+    padding: 0.65rem 2.5rem;
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    background-color: rgba(23, 94, 88);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.formLogin {
+    opacity: 1;
+    display: block;
+}
+
+.formRegister {
+    display: none;
+}
+
+.formRegister.active {
+    display: block !important;
+    left: 97% !important;    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.formLogin.active {
+    display: none;
+}

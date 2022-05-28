@@ -48,8 +48,8 @@ export const addLocal = (product) => {
     }
 }
 
-export const removeAll = () => {
+export const clearCart = () => {
     return dispatch => {
-        dispatch({type: REMOVE_ALL})
+        dispatch({type: CLEAR_CART})
     }
 }

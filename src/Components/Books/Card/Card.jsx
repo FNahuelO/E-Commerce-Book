@@ -13,8 +13,8 @@ function Card(props) {
       img: props.img,
       price: props.price
     }
-    dispatch(addCart(product))
     dispatch(addLocal(product))
+    dispatch(addCart(product))
 
   }
 

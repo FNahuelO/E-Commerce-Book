@@ -20,7 +20,7 @@ const Details = () => {
     
     return (
         <div className={style.container}>
-                <Link to='/home'><button type='button'>BACK</button></Link>
+                <Link to='/'><button type='button'>BACK</button></Link>
             {loading ? <img src={spinner} id={style.spinner} /> : <><div className={style.image}>
                 <img src={book.volumeInfo && book.volumeInfo.imageLinks.thumbnail} alt="" />
             </div>

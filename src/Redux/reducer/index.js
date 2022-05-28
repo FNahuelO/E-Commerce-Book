@@ -1,4 +1,4 @@
-import { GET_BOOKS, GET_BOOK, ADD_CART, REMOVE_ALL, CLEAR_CART, REMOVE_BOOK } from "../actions"
+import { GET_BOOKS, GET_BOOK, ADD_CART, REMOVE_ALL, CLEAR_CART, REMOVE_BOOK, ADD_LOCAL } from "../actions"
 
 const initialState = {
     books: [],
@@ -23,6 +23,12 @@ const rootReduce = (state = initialState, action ) => {
                 ...state,
                 carrito: [...state.carrito, action.payload]
             }
+        case ADD_LOCAL:
+            const products = [...state.carrito, action.payload] 
+            window.localStorage.setItem("carrito",JSON.stringify(products))
+            return {
+                ...state
+            }          
         case REMOVE_BOOK:
             return {
                 ...state,

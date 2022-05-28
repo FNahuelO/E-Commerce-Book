@@ -1,18 +1,21 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addCart } from '../../../Redux/actions';
+import { addCart, addLocal } from '../../../Redux/actions';
 import style from './Card.module.css';
 
 function Card(props) {
   const dispatch = useDispatch()
   const handleClick = () => {
-    dispatch(addCart({
+    const product = {
       name: props.name,
       id: props.id,
       img: props.img,
       price: props.price
-    }))
+    }
+    dispatch(addCart(product))
+    dispatch(addLocal(product))
+
   }
 
   return (

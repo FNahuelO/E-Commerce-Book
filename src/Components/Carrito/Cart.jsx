@@ -5,7 +5,7 @@ import style from './Cart.module.css'
 import Items from './Items';
 
 const Cart = () => {
-    const carrito = useSelector(state => state.carrito)
+    const local = JSON.parse(localStorage.getItem("carrito"))
 
     return (
         <div className={style.container}>
@@ -15,7 +15,7 @@ const Cart = () => {
                     <h1>PRODUCTOS</h1>
                 </div>
                 <div className={style.list}>
-                {carrito.map(item => <Items 
+                {local.map(item => <Items 
                                     name={item.name}
                                     id={item.id}
                                     img={item.img}

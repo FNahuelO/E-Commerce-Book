@@ -6,6 +6,7 @@ export const ADD_CART = 'ADD_CART';
 export const REMOVE_BOOK = 'REMOVE_BOOK'
 export const REMOVE_ALL = 'REMOVE_ALL'
 export const CLEAR_CART = 'CLEAR_CART'
+export const ADD_LOCAL = 'ADD_LOCAL'
 
 export const getBooks = (title) => {
     return async dispatch => {
@@ -39,6 +40,12 @@ export const removeBook = (id) => {
     return dispatch => {
         dispatch({type: REMOVE_BOOK, payload: id})
     } 
+}
+
+export const addLocal = (product) => {
+    return dispatch => {
+        dispatch({type: ADD_LOCAL, payload:product })
+    }
 }
 
 export const removeAll = () => {

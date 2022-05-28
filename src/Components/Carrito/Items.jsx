@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../Redux/actions';
+import { removeBook, removeLocal } from '../../Redux/actions';
 import style from './Items.module.css'
 
 const Items = ({name,id, img, price}) => {
@@ -15,13 +15,18 @@ const Items = ({name,id, img, price}) => {
         }
     }
 
+    const handleRemove = () => {
+        dispatch(removeBook(id))
+        /* dispatch(removeLocal()) */
+    }
+
     const handleChange = (e) => {
         e.preventDefault()
         setCount(Number(e.target.value))
     }
     return (
         <div className={style.container}>
-            <button onClick={() => dispatch(removeBook(id))}>X</button>
+            <button onClick={() => handleRemove()}>X</button>
             <div className={style.portada}>
                 <img src={img} />
             </div>

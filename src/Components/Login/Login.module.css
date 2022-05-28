@@ -1,5 +1,17 @@
 main{
-    background-color: black;
+    background-image: url('https://i.pinimg.com/originals/b8/00/87/b800878ec9ca72ed7f4ebe64e4aa1832.jpg');
+}
+
+main>a>button {
+    position: absolute;
+   padding: 0.5rem 1rem;
+   top: 2rem;
+   left: 2rem;
+   border-radius: 1rem;
+   cursor: pointer;
+   background-color: rgb(97, 22, 22);
+   border: 1px solid white;
+   color:white
 }
 .container {
     display: flex;
@@ -7,7 +19,7 @@ main{
     flex-wrap: wrap;
     width: 100%;
     max-width: 50rem;
-    height: 37.5rem;
+    height: 38rem;
     position: relative;
     margin: auto;
 }
@@ -17,8 +29,8 @@ main{
     height: 60%;
     display: flex;
     justify-content: space-around;
-    backdrop-filter: blur(00.3rem);
-    background-color: rgba(23, 94, 88, 0.9);
+    backdrop-filter: blur(0.3rem);
+    background-color: rgb(63, 16, 16, 0.5);
 
 }
 
@@ -52,7 +64,7 @@ main{
 
 .containerBack button:hover {
     background-color: white;
-    color: rgba(23, 94, 88);
+    color: rgb(63, 16, 16);
 }
 
 .containerFront {
@@ -77,7 +89,7 @@ main{
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.25rem;
-    color: rgba(23, 94, 88);
+    color: rgb(63, 16, 16);
 }
 .containerFront form input{
     width: 90%;
@@ -90,12 +102,16 @@ main{
     padding: 0.65rem 2.5rem;
     margin-top: 2.5rem;
     font-size: 1rem;
-    background-color: rgba(23, 94, 88);
+    background-color: rgb(63, 16, 16);
     color: white;
     cursor: pointer;
     outline: none;
     border: none;
     border-radius: 0.5rem;
+}
+
+.containerFront form input::placeholder {
+    color: rgb(63, 16, 16);
 }
 
 .formLogin {
@@ -109,7 +125,7 @@ main{
 
 .formRegister.active {
     display: block !important;
-    left: 97% !important;    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    left: 97% !important;
 }
 
 .formLogin.active {

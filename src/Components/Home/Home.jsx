@@ -5,15 +5,21 @@ import { getBooks } from '../../Redux/actions';
 import Books from '../Books/Books';
 import style from './Home.module.css'
 import user from '../../Extras/icons8-user-64.png'
+import { useAuth } from '../../Context/authContext';
 const Home = () => {
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()
     const books = useSelector(state => state.books)
+    const { currentUser,logout } = useAuth()
 
 
     const handleChange = (e) => {
         e.preventDefault()
         setSearch(e.target.value)
+    }
+
+    const handleLogout = async() => {
+        await logout()
     }
 
     const handleSubmit = e => {
@@ -34,7 +40,7 @@ const Home = () => {
                 <div className={style.user}>
                     <div id={style.login}>
                         <img src={user} alt="" />
-                        <Link to='/login'><span>INICIAR SESIÓN | REGISTRARME </span></Link>
+                        {!currentUser ? <Link to='/login'><span>INICIAR SESIÓN</span></Link> : <span onClick={handleLogout}>CERRAR SESIÓN</span>}
                     </div>
                     <div>
                         CART
@@ -43,7 +49,7 @@ const Home = () => {
             </nav>
             <div className={style.container}>
                 <div>
-                    NAV
+                    
                 </div>
                 <div className={style.containerBooks}>
                     <Books books={books}/>

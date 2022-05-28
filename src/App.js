@@ -6,19 +6,22 @@ import Layout from './Pages/Layout'
 import Carrito from './Pages/Carrito'
 import Login from './Pages/Login'
 import Footer from './Components/Footer/Footer';
+import {AuthProvider} from './Context/authContext'
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path='/' element={<Layout />} />
-          <Route path='/home' element={<HomePage />} />
-          <Route path='/book/:id' element={<Details />} />
-          <Route path='/carrito' element={<Carrito />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Layout />} />
+            <Route path='/home' element={<HomePage />} />
+            <Route path='/book/:id' element={<Details />} />
+            <Route path='/carrito' element={<Carrito />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
       <Footer />
     </div>
   );

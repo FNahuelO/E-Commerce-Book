@@ -65,7 +65,7 @@
 
 #login {
     width: 75%;
-    justify-content: space-around;
+    justify-content: center;
     display: flex;
     align-items: center;
 }
@@ -74,8 +74,10 @@
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: small;
+    margin-left: 0.5rem;
+    cursor: pointer;
 }
 
 #login img {
-    width: 2.5rem;
+    width: 2rem;
 }

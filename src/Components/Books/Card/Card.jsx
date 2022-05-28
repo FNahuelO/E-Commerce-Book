@@ -8,8 +8,8 @@ function Card(props) {
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch(addCart({
+      name: props.name,
       img: props.img,
-      product: props.title,
       price: props.price
     }))
   }
@@ -21,7 +21,7 @@ function Card(props) {
           <Link to={`/book/${props.id}`}><h2>{props.title}</h2></Link>
           <h4>{props.author}</h4>
           <h5>{props.price}</h5>
-          {props.price != 'NOT PRICE' ? <button type='button' onClick={() => handleClick()}>ADD</button> : <button type='button' disabled onClick={() => handleClick()}>ADD</button>}
+          {props.price !== 'NOT PRICE' ? <button type='button' onClick={() => handleClick()}>ADD</button> : <button type='button' disabled onClick={() => handleClick()}>ADD</button>}
         </div>
     </div>
   )

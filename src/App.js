@@ -14,7 +14,6 @@ function App() {
       <AuthProvider>
         <Router>
           <Routes>
-            <Route exact path='/' element={<Layout />} />
             <Route path='/home' element={<HomePage />} />
             <Route path='/book/:id' element={<Details />} />
             <Route path='/carrito' element={<Carrito />} />

@@ -9,6 +9,7 @@ function Card(props) {
   const handleClick = () => {
     dispatch(addCart({
       name: props.name,
+      id: props.id,
       img: props.img,
       price: props.price
     }))

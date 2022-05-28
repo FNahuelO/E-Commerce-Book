@@ -4,14 +4,45 @@
     background-position: 50%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+.container>a>button {
+    position: absolute;
+   padding: 0.5rem 1rem;
+   top: 2rem;
+   left: 2rem;
+   border-radius: 1rem;
+   cursor: pointer;
+   background-color: rgb(97, 22, 22);
+   border: 1px solid white;
+   color:white
 }
 
 .products {
-    width: 50%;
-    border: 1px solid white;
+    width: 89%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.products>div {
+    width:  90%;
+    border-bottom: 1px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .review {
     width: 30%;
     border: 1px solid white;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly !important;
+    width: 100% !important;
+    height: 100%;
+    overflow-y: auto;
 }

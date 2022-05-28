@@ -28,11 +28,6 @@ const rootReduce = (state = initialState, action ) => {
                 ...state,
                 carrito: state.carrito.filter(book => book.id !== action.payload)
             }
-        case REMOVE_ALL:
-            return {
-                ...state,
-                carrito: []
-            }
         case CLEAR_CART: 
             return {
                 ...state,

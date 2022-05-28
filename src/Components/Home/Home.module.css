@@ -22,6 +22,10 @@
 
 .logo img {}
 
+.cart img {
+    width: 2rem;
+}
+
 .form {
     display: flex;
     justify-content: space-evenly;

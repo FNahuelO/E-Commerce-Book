@@ -1,0 +1,38 @@
+.container {
+    max-width: 40%;
+    height: 50%;
+    border: 2px solid white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.75);
+    padding: 1.125rem;
+    margin: 0.5rem;
+    position: relative;
+}
+
+.container>button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid white;
+    color: rgb(63, 16, 16);
+}
+
+.portada img {
+    width: 70%;
+} 
+
+.stock {
+    width: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#count {
+    text-align: center;
+    width: 2rem;
+}

@@ -51,14 +51,14 @@ const Login = () => {
         if(e.target.name === 'login'){
             try {
                 await logIn(login.emailLogin, login.passwordLogin)
-                navigate('/home')
+                navigate('/')
             } catch (error) {
                 setErrorMessage(error.message)
             }
         } else {
             try {
                 await signUp(register)
-                navigate('/home')
+                navigate('/')
             } catch (error) {
                 setErrorMessage(error.message)
             }
@@ -67,7 +67,7 @@ const Login = () => {
 
     return (
         <main>
-            <Link to='/home'><button type='button'>BACK</button></Link>
+            <Link to='/'><button type='button'>BACK</button></Link>
             <div className={style.container}>
             <div className={style.containerBack}>
                 <div className={style.backLogin}>
